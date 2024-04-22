@@ -1,8 +1,7 @@
 FROM node:19.7.0-alpine
-ENV NODE_ENV=production
-RUN mkdir /labone
-RUN chown node:node /labone
 WORKDIR /labone
+ENV NODE_ENV=production
+RUN chown node:node /labone
 USER node
 COPY --chown=node:node . .
 RUN npm install
